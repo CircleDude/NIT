@@ -1,203 +1,204 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <ul type="square">
-            <li><a href="index.html">Самые быстрые автомобили</a></li>
-            <li><a href="list.html">Список самых быстрых автомобилей</a></li>
-        </ul>
-        <hr>
-    </head>
-    <body>
-        <details>
-            <summary> График </summary>
-            <form>
-                <table border=0 width="300p">
-                    <tr>
-                        <th>Значение по оси ОХ</th>
-                        <th>Результат</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input  type="radio"  name="OXvalue" value="type"> Тип <br>
-                            <input  type="radio"  name="OXvalue" value="country"> Страна <br>
-                            <input  type="radio"  name="OXvalue" value="year"> Год
-                        </td>
-                        <td>
-                            <input type="checkbox" name="result" value="0"> result0 <br>
-                            <input type="checkbox" name="result" value="1"> result1 <br>
-                            <input type="checkbox" name="result" value="2"> result2
-                        </td>
-                    </tr>
-                </table>
-                <input type="button" value="Построить">
-            </form>
-            <p>Здесь будет график</p>
-        </details>
-        <details>
-            <summary> Фильтр </summary>
-            <form>
-                <p>
-                    <label>Производитель:
-                        <input type="text" name="manufacturer">
-                    </label>
-                </p>
-                <p>
-                    <label>Название:
-                        <input type="text" name="name">
-                    </label>
-                </p>
-                <p>
-                    <label>Год: от
-                        <input type="text" name="year_from">
-                    </label>
-                    <label>до
-                        <input type="text" name="year_up_to">
-                    </label>
-                </p>
-                <p>
-                    <label>Страна:
-                        <input type="text" name="country">
-                    </label>
-                </p>
-                <p>
-                    <label>Тип:
-                        <input type="text" name="type">
-                    </label>
-                </p>
-                <p>
-                    <label>Привод:
-                        <input type="text" name="drive">
-                    </label>
-                </p>
-                <p>
-                    <label>Максимальная скорость: от
-                        <input type="text" name="max_speed_from">
-                    </label>
-                    <label>до
-                        <input type="text" name="max_speed_up_to">
-                    </label>
-                </p>
-                <p>
-                    <input type="button" value="Найти">
-                </p>
-            </form>
-        </details>
-        <details>
-            <summary> Сортировка </summary>
-            <form>
-                <p>
-                    <label>Первый уровень:
-                        <select name="first_level">
-                            <option value="0" selected> Нет </option>
-                            <option value="1"> Максимальная скорость </option>
-                            <option value="2"> Год </option>
-                            <option value="3"> Привод </option>
-                        </select>
-                    </label>
-                    <label>
-                        по убыванию?
-                        <input type="checkbox" name="first_level_order" value="opposite">
-                    </label>
-                </p>
-                <p>
-                    <label>Второй уровень:
-                        <select name="second_level">
-                            <option value="0" selected> Нет </option>
-                            <option value="1"> Максимальная скорость </option>
-                            <option value="2"> Год </option>
-                            <option value="3"> Привод </option>
-                        </select>
-                    </label>
-                    <label>
-                        по убыванию?
-                        <input type="checkbox" name="second_level_order" value="opposite">
-                    </label>
-                </p>
-                <p>
-                    <label>Третий уровень:
-                        <select name="third_level">
-                            <option value="0" selected> Нет </option>
-                            <option value="1"> Максимальная скорость </option>
-                            <option value="2"> Год </option>
-                            <option value="3"> Привод </option>
-                        </select>
-                    </label>
-                    <label>
-                        по убыванию?
-                        <input type="checkbox" name="third_level_order" value="opposite">
-                    </label>
-                </p>
-                <p>
-                    <input type="button" value="Сортировать">
-                </p>
-            </form>
-        </details>
-        
-        <br>
-        
-        <table border="2" cellpadding="4" cellspacing="0">
-            <thead>
-                <tr>
-                <th>Производитель</th>
-                <th>Название</th>
-                <th>Год</th>
-                <th>Страна</th>
-                <th>Тип</th>
-                <th>Привод</th>
-                <th>Максимальная скорость (км/ч)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Devel</td><td>Sixteen</td><td>2017</td><td>ОАЭ</td><td>hypercar/concept</td><td>RWD</td><td>560</td></tr>
-                <tr><td>SSC</td><td>Tuatara</td><td>2020</td><td>США</td><td>hypercar</td><td>RWD</td><td>532</td></tr>
-                <tr><td>Koenigsegg</td><td>Jesko Absolut</td><td>2020</td><td>Швеция</td><td>hypercar</td><td>RWD</td><td>531</td></tr>
-                <tr><td>Hennessey</td><td>Venom F5</td><td>2017</td><td>США</td><td>hypercar</td><td>RWD</td><td>500</td></tr>
-                <tr><td>Bugatti</td><td>Chiron Super Sport 300+</td><td>2019</td><td>Франция</td><td>hypercar</td><td>AWD</td><td>490</td></tr>
-                <tr><td>Koenigsegg</td><td>Agera RS</td><td>2017</td><td>Швеция</td><td>hypercar</td><td>RWD</td><td>447</td></tr>
-                <tr><td>Koenigsegg</td><td>One:1</td><td>2014</td><td>Швеция</td><td>hypercar</td><td>RWD</td><td>440</td></tr>
-                <tr><td>Bugatti</td><td>Veyron Super Sport</td><td>2010</td><td>Франция</td><td>hypercar</td><td>AWD</td><td>431</td></tr>
-                <tr><td>Bugatti</td><td>Chiron</td><td>2016</td><td>Франция</td><td>hypercar</td><td>AWD</td><td>420</td></tr>
-                <tr><td>SSC</td><td>Ultimate Aero</td><td>2007</td><td>США</td><td>hypercar</td><td>RWD</td><td>412</td></tr>
-                <tr><td>Rimac</td><td>Nevera</td><td>2021</td><td>Хорватия</td><td>electric hypercar</td><td>AWD</td><td>412</td></tr>
-                <tr><td>Koenigsegg</td><td>Regera</td><td>2015</td><td>Швеция</td><td>hybrid hypercar</td><td>RWD</td><td>410</td></tr>
-                <tr><td>McLaren</td><td>Speedtail</td><td>2018</td><td>Великобритания</td><td>hypercar</td><td>RWD</td><td>403</td></tr>
-                <tr><td>Saleen</td><td>S7 Twin Turbo</td><td>2005</td><td>США</td><td>supercar</td><td>RWD</td><td>399</td></tr>
-                <tr><td>W Motors</td><td>Lykan HyperSport</td><td>2013</td><td>ОАЭ</td><td>hypercar</td><td>AWD</td><td>395</td></tr>
-                <tr><td>McLaren</td><td>F1</td><td>1998</td><td>Великобритания</td><td>supercar</td><td>RWD</td><td>386</td></tr>
-                <tr><td>Pagani</td><td>Huayra BC</td><td>2016</td><td>Италия</td><td>hypercar</td><td>RWD</td><td>380</td></tr>
-                <tr><td>Lamborghini</td><td>Veneno</td><td>2013</td><td>Италия</td><td>hypercar</td><td>AWD</td><td>355</td></tr>
-                <tr><td>Pagani</td><td>Zonda R</td><td>2009</td><td>Италия</td><td>track hypercar</td><td>RWD</td><td>350</td></tr>
-                <tr><td>Ferrari</td><td>LaFerrari</td><td>2013</td><td>Италия</td><td>hybrid hypercar</td><td>RWD</td><td>350</td></tr>
-                <tr><td>Ferrari</td><td>Enzo</td><td>2002</td><td>Италия</td><td>supercar</td><td>RWD</td><td>350</td></tr>
-                <tr><td>Aston Martin</td><td>One-77</td><td>2010</td><td>Великобритания</td><td>hypercar</td><td>RWD</td><td>354</td></tr>
-                <tr><td>Lamborghini</td><td>Aventador SVJ</td><td>2018</td><td>Италия</td><td>supercar</td><td>AWD</td><td>350</td></tr>
-                <tr><td>McLaren</td><td>P1</td><td>2013</td><td>Великобритания</td><td>hybrid hypercar</td><td>RWD</td><td>350</td></tr>
-                <tr><td>Ferrari</td><td>F50</td><td>1995</td><td>Италия</td><td>supercar</td><td>RWD</td><td>325</td></tr>
-                <tr><td>Ferrari</td><td>F40</td><td>1987</td><td>Италия</td><td>supercar</td><td>RWD</td><td>324</td></tr>
-                <tr><td>Porsche</td><td>918 Spyder</td><td>2013</td><td>Германия</td><td>hybrid hypercar</td><td>AWD</td><td>345</td></tr>
-                <tr><td>Porsche</td><td>911 GT2 RS (991)</td><td>2018</td><td>Германия</td><td>sports car</td><td>RWD</td><td>340</td></tr>
-                <tr><td>Jaguar</td><td>XJ220</td><td>1992</td><td>Великобритания</td><td>supercar</td><td>RWD</td><td>341</td></tr>
-                <tr><td>Ford</td><td>GT (2017)</td><td>2017</td><td>США</td><td>supercar</td><td>RWD</td><td>347</td></tr>
-                <tr><td>Maserati</td><td>MC12</td><td>2004</td><td>Италия</td><td>supercar</td><td>RWD</td><td>330</td></tr>
-                <tr><td>Zenvo</td><td>ST1 / TSR</td><td>2009</td><td>Дания</td><td>hypercar</td><td>RWD</td><td>375</td></tr>
-                <tr><td>Vector</td><td>W8</td><td>1992</td><td>США</td><td>supercar</td><td>RWD</td><td>322</td></tr>
-                <tr><td>Gumpert</td><td>Apollo</td><td>2005</td><td>Германия</td><td>supercar</td><td>RWD</td><td>350</td></tr>
-                <tr><td>SSC</td><td>Tuatarа (prototype claims)</td><td>2020</td><td>США</td><td>hypercar (claimed)</td><td>RWD</td><td>532</td></tr>
-                <tr><td>De Tomaso</td><td>P72 (ретро‑гиперкар)</td><td>2020</td><td>Италия</td><td>supercar</td><td>RWD</td><td>320</td></tr>
-                <tr><td>Koenigsegg</td><td>CCR</td><td>2004</td><td>Швеция</td><td>supercar</td><td>RWD</td><td>388</td></tr>
-                <tr><td>Glickenhaus</td><td>SCG 004S</td><td>2020</td><td>США</td><td>supercar</td><td>RWD</td><td>320</td></tr>
-                <tr><td>Lotus</td><td>Evija</td><td>2020</td><td>Великобритания</td><td>electric hypercar</td><td>AWD</td><td>320</td></tr>
-                <tr><td>RUF</td><td>CTR3</td><td>2007</td><td>Германия</td><td>supercar</td><td>RWD</td><td>360</td></tr>
-                <tr><td>Alfa Romeo</td><td>8C Competizione</td><td>2007</td><td>Италия</td><td>supercar</td><td>RWD</td><td>300</td></tr>
-                <tr><td>Pagani</td><td>Zonda Cinque</td><td>2009</td><td>Италия</td><td>hypercar</td><td>RWD</td><td>350</td></tr>
-                <tr><td>Lamborghini</td><td>Huracán Performante</td><td>2017</td><td>Италия</td><td>supercar</td><td>AWD</td><td>325</td></tr>
-                <tr><td>Lotus</td><td>Evora GT</td><td>2010</td><td>Великобритания</td><td>sports car</td><td>RWD</td><td>300</td></tr>
-                <tr><td>Tesla</td><td>Roadster (2nd gen, claimed)</td><td>2017</td><td>США</td><td>electric supercar (claimed)</td><td>AWD</td><td>400</td></tr>
-                <tr><td>BMW</td><td>M8 GTE / concept speeds</td><td>2019</td><td>Германия</td><td>grand tourer</td><td>RWD/AWD</td><td>305</td></tr>
-                <tr><td>Dodge</td><td>Viper ACR (track configs)</td><td>2016</td><td>США</td><td>supercar</td><td>RWD</td><td>340</td></tr>
-                <tr><td>Chevrolet</td><td>Corvette C8 Z06 (claimed)</td><td>2023</td><td>США</td><td>sports car</td><td>RWD</td><td>330</td></tr>
-            </tbody>
-        </table>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Самые быстрые автомобили</title>
+</head>
+<body>
 
-    </body>
+  <ul type="none">
+    <li><a href="index.html">Самые быстрые автомобили</a></li>
+    <li><a href="list.html">Список самых быстрых автомобилей</a></li>
+  </ul>
+  <hr>
+
+  <details>
+    <summary>График</summary>
+    <form>
+      <p><b>Значение по оси ОХ</b><br>
+        <label><input type="radio" name="OXvalue" value="type"> Тип</label><br>
+        <label><input type="radio" name="OXvalue" value="country"> Страна</label><br>
+        <label><input type="radio" name="OXvalue" value="year"> Год</label>
+      </p>
+      <p><b>Результат</b><br>
+        <label><input type="checkbox" name="result" value="0"> Максимальная скорость</label><br>
+        <label><input type="checkbox" name="result" value="1"> Минимальная скорость</label><br>
+        <label><input type="checkbox" name="result" value="2"> Привод</label>
+      </p>
+      <input type="button" value="Построить">
+    </form>
+    <p>Здесь будет график</p>
+  </details>
+
+  <details>
+    <summary>Фильтр</summary>
+    <form>
+      <p>
+        <label>Производитель:
+          <input type="text" name="manufacturer">
+        </label>
+      </p>
+      <p>
+        <label>Название:
+          <input type="text" name="name">
+        </label>
+      </p>
+      <p>
+        <label>Год: от
+          <input type="number" name="year_from" size="6">
+        </label>
+        <label>до
+          <input type="number" name="year_up_to" size="6">
+        </label>
+      </p>
+      <p>
+        <label>Страна:
+          <input type="text" name="country">
+        </label>
+      </p>
+      <p>
+        <label>Тип:
+          <input type="text" name="type">
+        </label>
+      </p>
+      <p>
+        <label>Привод:
+          <input type="text" name="drive">
+        </label>
+      </p>
+      <p>
+        <label>Максимальная скорость: от
+          <input type="number" name="max_speed_from" size="6">
+        </label>
+        <label>до
+          <input type="number" name="max_speed_up_to" size="6">
+        </label>
+      </p>
+      <p>
+        <input type="button" value="Найти">
+      </p>
+    </form>
+  </details>
+
+  <details>
+    <summary>Сортировка</summary>
+    <form>
+      <p>
+        <label>Первый уровень:
+          <select name="first_level">
+            <option value="0" selected> Нет </option>
+            <option value="1"> Максимальная скорость </option>
+            <option value="2"> Год </option>
+            <option value="3"> Привод </option>
+          </select>
+        </label>
+        <label>
+          по убыванию?
+          <input type="checkbox" name="first_level_order" value="opposite">
+        </label>
+      </p>
+
+      <p>
+        <label>Второй уровень:
+          <select name="second_level">
+            <option value="0" selected> Нет </option>
+            <option value="1"> Максимальная скорость </option>
+            <option value="2"> Год </option>
+            <option value="3"> Привод </option>
+          </select>
+        </label>
+        <label>
+          по убыванию?
+          <input type="checkbox" name="second_level_order" value="opposite">
+        </label>
+      </p>
+
+      <p>
+        <label>Третий уровень:
+          <select name="third_level">
+            <option value="0" selected> Нет </option>
+            <option value="1"> Максимальная скорость </option>
+            <option value="2"> Год </option>
+            <option value="3"> Привод </option>
+          </select>
+        </label>
+        <label>
+          по убыванию?
+          <input type="checkbox" name="third_level_order" value="opposite">
+        </label>
+      </p>
+
+      <p>
+        <input type="button" value="Сортировать">
+      </p>
+    </form>
+  </details>
+
+  <br>
+
+  <table border="2" cellpadding="4" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Производитель</th>
+        <th>Название</th>
+        <th>Год</th>
+        <th>Страна</th>
+        <th>Тип</th>
+        <th>Привод</th>
+        <th>Максимальная скорость (км/ч)</th>
+      </tr>
+    </thead>
+      <tbody>
+        <tr><td>Devel</td><td>Sixteen</td><td>2017</td><td>ОАЭ</td><td>hypercar/concept</td><td>RWD</td><td>560</td></tr>
+        <tr><td>SSC</td><td>Tuatara</td><td>2020</td><td>США</td><td>hypercar</td><td>RWD</td><td>532</td></tr>
+        <tr><td>Koenigsegg</td><td>Jesko Absolut</td><td>2020</td><td>Швеция</td><td>hypercar</td><td>RWD</td><td>531</td></tr>
+        <tr><td>Hennessey</td><td>Venom F5</td><td>2017</td><td>США</td><td>hypercar</td><td>RWD</td><td>500</td></tr>
+        <tr><td>Bugatti</td><td>Chiron Super Sport 300+</td><td>2019</td><td>Франция</td><td>hypercar</td><td>AWD</td><td>490</td></tr>
+        <tr><td>Koenigsegg</td><td>Agera RS</td><td>2017</td><td>Швеция</td><td>hypercar</td><td>RWD</td><td>447</td></tr>
+        <tr><td>Koenigsegg</td><td>One:1</td><td>2014</td><td>Швеция</td><td>hypercar</td><td>RWD</td><td>440</td></tr>
+        <tr><td>Bugatti</td><td>Veyron Super Sport</td><td>2010</td><td>Франция</td><td>hypercar</td><td>AWD</td><td>431</td></tr>
+        <tr><td>Bugatti</td><td>Chiron</td><td>2016</td><td>Франция</td><td>hypercar</td><td>AWD</td><td>420</td></tr>
+        <tr><td>SSC</td><td>Ultimate Aero</td><td>2007</td><td>США</td><td>hypercar</td><td>RWD</td><td>412</td></tr>
+        <tr><td>Rimac</td><td>Nevera</td><td>2021</td><td>Хорватия</td><td>electric hypercar</td><td>AWD</td><td>412</td></tr>
+        <tr><td>Koenigsegg</td><td>Regera</td><td>2015</td><td>Швеция</td><td>hybrid hypercar</td><td>RWD</td><td>410</td></tr>
+        <tr><td>McLaren</td><td>Speedtail</td><td>2018</td><td>Великобритания</td><td>hypercar</td><td>RWD</td><td>403</td></tr>
+        <tr><td>Saleen</td><td>S7 Twin Turbo</td><td>2005</td><td>США</td><td>supercar</td><td>RWD</td><td>399</td></tr>
+        <tr><td>W Motors</td><td>Lykan HyperSport</td><td>2013</td><td>ОАЭ</td><td>hypercar</td><td>AWD</td><td>395</td></tr>
+        <tr><td>McLaren</td><td>F1</td><td>1998</td><td>Великобритания</td><td>supercar</td><td>RWD</td><td>386</td></tr>
+        <tr><td>Pagani</td><td>Huayra BC</td><td>2016</td><td>Италия</td><td>hypercar</td><td>RWD</td><td>380</td></tr>
+        <tr><td>Lamborghini</td><td>Veneno</td><td>2013</td><td>Италия</td><td>hypercar</td><td>AWD</td><td>355</td></tr>
+        <tr><td>Pagani</td><td>Zonda R</td><td>2009</td><td>Италия</td><td>track hypercar</td><td>RWD</td><td>350</td></tr>
+        <tr><td>Ferrari</td><td>LaFerrari</td><td>2013</td><td>Италия</td><td>hybrid hypercar</td><td>RWD</td><td>350</td></tr>
+        <tr><td>Ferrari</td><td>Enzo</td><td>2002</td><td>Италия</td><td>supercar</td><td>RWD</td><td>350</td></tr>
+        <tr><td>Aston Martin</td><td>One-77</td><td>2010</td><td>Великобритания</td><td>hypercar</td><td>RWD</td><td>354</td></tr>
+        <tr><td>Lamborghini</td><td>Aventador SVJ</td><td>2018</td><td>Италия</td><td>supercar</td><td>AWD</td><td>350</td></tr>
+        <tr><td>McLaren</td><td>P1</td><td>2013</td><td>Великобритания</td><td>hybrid hypercar</td><td>RWD</td><td>350</td></tr>
+        <tr><td>Ferrari</td><td>F50</td><td>1995</td><td>Италия</td><td>supercar</td><td>RWD</td><td>325</td></tr>
+        <tr><td>Ferrari</td><td>F40</td><td>1987</td><td>Италия</td><td>supercar</td><td>RWD</td><td>324</td></tr>
+        <tr><td>Porsche</td><td>918 Spyder</td><td>2013</td><td>Германия</td><td>hybrid hypercar</td><td>AWD</td><td>345</td></tr>
+        <tr><td>Porsche</td><td>911 GT2 RS (991)</td><td>2018</td><td>Германия</td><td>sports car</td><td>RWD</td><td>340</td></tr>
+        <tr><td>Jaguar</td><td>XJ220</td><td>1992</td><td>Великобритания</td><td>supercar</td><td>RWD</td><td>341</td></tr>
+        <tr><td>Ford</td><td>GT (2017)</td><td>2017</td><td>США</td><td>supercar</td><td>RWD</td><td>347</td></tr>
+        <tr><td>Maserati</td><td>MC12</td><td>2004</td><td>Италия</td><td>supercar</td><td>RWD</td><td>330</td></tr>
+        <tr><td>Zenvo</td><td>ST1 / TSR</td><td>2009</td><td>Дания</td><td>hypercar</td><td>RWD</td><td>375</td></tr>
+        <tr><td>Vector</td><td>W8</td><td>1992</td><td>США</td><td>supercar</td><td>RWD</td><td>322</td></tr>
+        <tr><td>Gumpert</td><td>Apollo</td><td>2005</td><td>Германия</td><td>supercar</td><td>RWD</td><td>350</td></tr>
+        <tr><td>SSC</td><td>Tuatarа (prototype claims)</td><td>2020</td><td>США</td><td>hypercar (claimed)</td><td>RWD</td><td>532</td></tr>
+        <tr><td>De Tomaso</td><td>P72 (ретро‑гиперкар)</td><td>2020</td><td>Италия</td><td>supercar</td><td>RWD</td><td>320</td></tr>
+        <tr><td>Koenigsegg</td><td>CCR</td><td>2004</td><td>Швеция</td><td>supercar</td><td>RWD</td><td>388</td></tr>
+        <tr><td>Glickenhaus</td><td>SCG 004S</td><td>2020</td><td>США</td><td>supercar</td><td>RWD</td><td>320</td></tr>
+        <tr><td>Lotus</td><td>Evija</td><td>2020</td><td>Великобритания</td><td>electric hypercar</td><td>AWD</td><td>320</td></tr>
+        <tr><td>RUF</td><td>CTR3</td><td>2007</td><td>Германия</td><td>supercar</td><td>RWD</td><td>360</td></tr>
+        <tr><td>Alfa Romeo</td><td>8C Competizione</td><td>2007</td><td>Италия</td><td>supercar</td><td>RWD</td><td>300</td></tr>
+        <tr><td>Pagani</td><td>Zonda Cinque</td><td>2009</td><td>Италия</td><td>hypercar</td><td>RWD</td><td>350</td></tr>
+        <tr><td>Lamborghini</td><td>Huracán Performante</td><td>2017</td><td>Италия</td><td>supercar</td><td>AWD</td><td>325</td></tr>
+        <tr><td>Lotus</td><td>Evora GT</td><td>2010</td><td>Великобритания</td><td>sports car</td><td>RWD</td><td>300</td></tr>
+        <tr><td>Tesla</td><td>Roadster (2nd gen, claimed)</td><td>2017</td><td>США</td><td>electric supercar (claimed)</td><td>AWD</td><td>400</td></tr>
+        <tr><td>BMW</td><td>M8 GTE / concept speeds</td><td>2019</td><td>Германия</td><td>grand tourer</td><td>RWD/AWD</td><td>305</td></tr>
+        <tr><td>Dodge</td><td>Viper ACR (track configs)</td><td>2016</td><td>США</td><td>supercar</td><td>RWD</td><td>340</td></tr>
+        <tr><td>Chevrolet</td><td>Corvette C8 Z06 (claimed)</td><td>2023</td><td>США</td><td>sports car</td><td>RWD</td><td>330</td></tr>
+      </tbody>
+    </table>
+
+</body>
 </html>
