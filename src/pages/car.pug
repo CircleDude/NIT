@@ -1,0 +1,18 @@
+extends template
+
+block prepend header
+    - title = cars[0].menuItem
+
+block nav
+
+    nav
+        +createMenuCar(dictMenu, cars[0].menuItem)
+    
+block content
+
+    .car-image
+        img(src= require("../images/" + cars[0].pict))
+
+    section
+        p= cars[0].firstP
+        p= cars[0].secondP
