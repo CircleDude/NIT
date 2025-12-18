@@ -73,36 +73,9 @@ block content
     details
         summary Сортировка
         form
-            p
-                label Первый уровень: 
-                    select(name="first_level")
-                        option(value="0", selected) Нет
-                        option(value="1") Максимальная скорость
-                        option(value="2") Год
-                        option(value="3") Привод
-                label
-                    |  по убыванию?
-                    input(type="checkbox", name="first_level_order", value="opposite")
-            p
-                label Второй уровень: 
-                    select(name="second_level")
-                        option(value="0", selected) Нет
-                        option(value="1") Максимальная скорость
-                        option(value="2") Год
-                        option(value="3") Привод
-                label
-                    |  по убыванию?
-                    input(type="checkbox", name="second_level_order", value="opposite")
-            p
-                label Третий уровень: 
-                    select(name="third_level")
-                        option(value="0", selected) Нет
-                        option(value="1") Максимальная скорость
-                        option(value="2") Год
-                        option(value="3") Привод
-                label
-                    |  по убыванию?
-                    input(type="checkbox", name="third_level_order", value="opposite")
+            +sortLevel("Первый уровень", "first_level", carListHead)
+            +sortLevel("Второй уровень", "second_level", carListHead)
+            +sortLevel("Третий уровень", "third_level", carListHead)
             p
                 input(type="button", value="Сортировать")
 

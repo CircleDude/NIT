@@ -36,3 +36,14 @@ mixin addTable(tableHead, tableBody)
             each row in tableBody
                 +addTableRow(row)
 
+mixin sortLevel(txt, name, row)
+  p
+    label= txt + ': '
+      select(name= name)
+        option(value="0", selected) Нет
+        - var i = 1
+        each val in row
+          option(value= i)= val
+          - i++
+    label= " по убыванию?"
+      input(type="checkbox", name= name + "_order", value="opposite")
