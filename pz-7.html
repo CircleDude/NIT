@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Калькуляхтор</title>
+</head>
+<body>
+    <div>
+        <img id="image" class="cl1" src="images/img1.png">
+        
+        <form class="cl1">
+            <label>Тип входных данных:</label>
+            <select id="inputSelect">
+                <option value="diagonals">диагонали</option>
+                <option value="side-angle">сторона и угол</option>
+            </select>
+
+            <input type="button" value="Показать" onClick="show(this.form)">
+
+            <div id="input">
+
+                <p>
+                    <label>
+                        <span id="label1">d<sub>1</sub></span> = 
+                        <input type="number" id="input1" min=0 max=200>
+                    </label>
+                </p><p>
+                    <label>
+                        <span id="label2">d<sub>2</sub></span> = 
+                        <input type="number" id="input2" min=0 max=200>
+                    </label>
+                </p>
+                <p>
+                    <div id="task">Найти:</div>
+                    <select id="select" multiple size="4">
+                        <option value="0">Высота</option>
+                        <option value="1">Периметр</option>
+                        <option value="2">Радиус вписанной окружности</option>
+                        <option value="3">Площадь</option>
+                    </select>
+                </p>
+                <p>
+                    <input type="button" value="Вычислить" id="calcBtn">
+                    <input type="button" value="Очистить" id="clearBtn">
+                </p>
+
+                <div id="output"></div>
+
+            </div>
+        </form>
+    </div>
+</body>
+<script src="program.js"></script>
+</html>

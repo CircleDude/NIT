@@ -1,0 +1,11 @@
+.errorBorder {
+    border: solid thin red;
+}
+
+.errorText {
+    color: red;
+}
+
+img {
+    height: 300px;
+}
