@@ -56,9 +56,16 @@ const sortTable = (idTable, formData) => {
             const firstCell = first.cells[column].innerHTML;
             const secondCell = second.cells[column].innerHTML;
 
-            // используем localeCompare для корректного сравнения
-            const comparison = (typeof firstCell == 'number' && typeof secondCell == 'number') ?
-                firstCell < secondCell : firstCell.localeCompare(secondCell);
+            // // используем localeCompare для корректного сравнения
+            // const comparison = (typeof firstCell == 'number' && typeof secondCell == 'number') ?
+            //     firstCell < secondCell : firstCell.localeCompare(secondCell);
+            let comparison;
+
+            if (numCols.includes(column)) {
+                comparison = Number(firstCell) - Number(secondCell);
+            } else {
+                comparison = firstCell.localeCompare(secondCell);
+            }
                 
             // учитываем направление сортировки
             if (comparison !== 0) {

@@ -49,6 +49,8 @@ const sortTable = (idTable, formData) => {
     
     // удаляем элемент с заголовками таблицы
      const headerRow = rowData.shift();
+
+     const numCols = [4, 5];
     
     //сортируем данные по всем уровням сортировки
     rowData.sort((first, second) => {
@@ -56,9 +58,16 @@ const sortTable = (idTable, formData) => {
             const firstCell = first.cells[column].innerHTML;
             const secondCell = second.cells[column].innerHTML;
 
-            // используем localeCompare для корректного сравнения
-            const comparison = (typeof firstCell == 'number' && typeof secondCell == 'number') ?
-                firstCell < secondCell : firstCell.localeCompare(secondCell);
+            // // используем localeCompare для корректного сравнения
+            // const comparison = (typeof firstCell == 'number' && typeof secondCell == 'number') ?
+            //     firstCell < secondCell : firstCell.localeCompare(secondCell);
+            let comparison;
+
+            if (numCols.includes(column)) {
+                comparison = Number(firstCell) - Number(secondCell);
+            } else {
+                comparison = firstCell.localeCompare(secondCell);
+            }
                 
             // учитываем направление сортировки
             if (comparison !== 0) {
