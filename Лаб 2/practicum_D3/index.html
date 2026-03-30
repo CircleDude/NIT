@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title> Трансформация и анимация</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="http://d3js.org/d3.v7.min.js"> </script>
+    <script src="JavaScript/main.js"></script>
+    <script src="JavaScript/image.js"></script>
+    <script src="JavaScript/path.js"></script>
+  </head>
+  <body>
+
+    <form id="setting">
+      <div>
+        <div id="coordinates">
+          <p><b>Координаты рисунка</b><br>
+            <label for="cx">x: </label>
+            <input type="number" id="cx" value="300" max="600" min="0">
+            <span class="for_animation">
+              <label for="cx_finish">до</label>
+              <input type="number" id="cx_finish" value="550" max="600" min="0"><br>
+            </span> 
+            <label for="cy">y: </label>
+            <input type="number" id="cy" value="300" max="600" min="0">
+            <label for="cy_finish">до</label>
+            <input type="number" id="cy_finish" value="550" max="600" min="0">
+          </p>
+        </div>
+        <div id="movementAlongPathTypeSelect">
+          <p>
+            <b>Пути перемещения</b><br>
+            <select id="movementAlongPathType">
+              <option>Буквой «Г»</option>
+              <option>По кругу</option>
+            </select>
+          </p>
+        </div>
+        <div id="scale">
+          <p><b>Масштаб</b><br>
+            <label for="sclx">по x: </label>
+            <input type="number" id="sclx" value="1" max="600" min="0">
+            <label for="sclx_finish">до</label>
+            <input type="number" id="sclx_finish" value="1.5" max="600" min="0"><br>
+            <label for="scly">по y: </label>
+            <input type="number" id="scly" value="1" max="600" min="0">
+            <label for="scly_finish">до</label>
+            <input type="number" id="scly_finish" value="1.5" max="600" min="0">
+          </p>
+        </div>
+        <div id="rotation">
+          <p><b>Поворот</b><br>
+            <label for="rot">угол: </label>
+            <input type="number" id="rot" value="0" max="360" min="-360">
+            <label for="rot_finish">до</label>
+            <input type="number" id="rot_finish" value="180" max="360" min="-360"><br>
+          </p>
+        </div>
+      </div>
+      <input type="button" value="Нарисовать" id="draw">
+      <input type="button" value="Очистить" id="clear"><br>
+      <label for="animation">Включить анимацию?</label>
+      <input type="checkbox" id="animation">
+      <select id="animType">
+        <option>linear</option>
+        <option>elastic</option>
+        <option>bounce</option>
+      </select> <br>
+      <span id="movementAlongPathQuestion">
+        <label for="movementAlongPath">Перемещение вдоль пути?</label>
+        <input type="checkbox" id="movementAlongPath">
+      </span><br>
+      <input type="button" value="Анимировать" id="animate">
+    </form>
+
+    <svg></svg>
+
+  </body>
+</html>
