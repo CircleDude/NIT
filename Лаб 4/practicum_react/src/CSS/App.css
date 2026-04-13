@@ -1,0 +1,21 @@
+th, td {
+  border: 1px solid;
+}
+
+.show {
+  
+}
+
+.hide {
+  display: none;
+}
+
+.currentPage {
+  color: blue;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+span {
+  width: 150px;
+}

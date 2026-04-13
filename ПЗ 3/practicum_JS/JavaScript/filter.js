@@ -79,7 +79,7 @@ const filterTable = (data, idTable, dataForm) => {
     
         // показать на странице таблицу с отфильтрованными строками
         createTable(tableFilter, idTable);
-        console.log(tableFilter);
+        // console.log(tableFilter);
     } else {
         clearRows(idTable);
     }

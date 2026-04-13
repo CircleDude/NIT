@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Фильтры и сортировка</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="../../../Библиотеки/d3.v7.min.js"></script>
+    <script src="JavaScript/data.js"></script>
+    <script src="JavaScript/main.js"></script>
+    <script src="JavaScript/table.js"></script>
+    <script src="JavaScript/filter.js"></script>
+    <script src="JavaScript/sort.js"></script>
+    <script src="JavaScript/chart.js"></script>
+</head>
+<body>
+    <ul type="none">
+        <li><a href="index.html">Самые быстрые автомобили</a></li>
+        <li><a href="list.html">Список самых быстрых автомобилей</a></li>
+    </ul>
+    <hr>
+
+    <details>
+      <summary>График</summary>
+      <form id="setting">
+        <p>
+          <b>Значение по оси OX:</b><br>
+          <input type="radio" id="radioCountry" name="OX_value" value="Страна" checked>
+          <label for="radioCountry">Страна</label><br>
+          <input type="radio" id="radioYear" name="OX_value" value="Год">
+          <label for="radioYear">Год</label><br>
+        </p>
+        <p>
+          <div id="titleOY"><b>Значение по оси OY:</b><br></div>
+          <input type="checkbox" id="maxHeight">
+          <label for="maxHeight">Максимальная скорость</label><br>
+          <input type="checkbox" id="minHeight">
+          <label for="minHeight">Минимальная скорость</label>
+        </p>
+        <p>
+          Тип графика:
+          <select id="graphType">
+            <option value="dots">Точечная диаграмма</option>
+            <option value="rects">Гисторамма</option>
+            <option value="graph">График</option>
+          </select>
+        </p>
+        <input type="button" value="Построить" id="plotGraph">
+      </form>
+
+      <svg></svg>
+    </details>
+
+    <details>
+        <summary>Фильтр</summary>
+        <form id="filter">
+            <p>
+                <label for="manufacturer">Производитель:</label>
+                <input type="text" id="manufacturer">
+            </p>
+            <p>
+                <label for="name">Название:</label>
+                <input type="text" id="name">
+            </p>
+            <p>
+                <label for="country">Страна:</label>
+                <input type="text" id="country">
+            </p>
+            <p>
+                <label for="type">Тип:</label>
+                <input type="text" id="type">
+            </p>
+            <p>
+                <label for="yearFrom">Год: </label>
+                от <input type="number" id="yearFrom"> 
+                до <input type="number" id="yearTo">
+            </p>
+            <p>
+                <label for="heightFrom">Максимальная скорость:</label>
+                от <input type="number" id="speedFrom"> 
+                до <input type="number" id="speedTo">
+            </p>
+            <input type="button" value="Найти" id="find">
+            <input type="button" value="Очистить фильтры" id="clear"> 
+        </form> 
+        <br>
+    </details> 
+
+    <details>
+        <summary>Сортировка</summary>
+        <form id="sort">
+            <p> Сортировать по</p>
+            <p>
+                <select id="fieldsFirst">
+                </select> 
+                по убыванию? <input  type="checkbox"  id="fieldsFirstDesc">
+            </p>
+            <p> 
+                <select id="fieldsSecond">
+                </select> 
+                по убыванию? <input  type="checkbox"  id="fieldsSecondDesc">
+            </p>
+            <p> 
+                <select id="fieldsThird">
+                </select> 
+                по убыванию? <input  type="checkbox"  id="fieldsThirdDesc">
+            </p>
+            <input type="button" value="Сортировать" id="sortButton"> 
+            <input type="button" value="Сбросить сортировку" id="clearSortButton">
+        </form>
+    </details>
+    
+    <br>
+
+    <input type="button" value="Скрыть таблицу" id="toggleTable">
+    <table id="list"></table>
+</body>
+</html>
