@@ -40,7 +40,6 @@ const Table = (props) => {
 
     return( 
       <>
-        <h4>Фильтры</h4>
         <Filter filtering={ updateDataTable } data={ dataTable } fullData={ props.data } sapn={ () => setActivePage(n) }/>
 
         <table>
