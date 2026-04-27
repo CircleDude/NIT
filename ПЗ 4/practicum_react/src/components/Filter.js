@@ -2,7 +2,6 @@
    компонент, для фильтрации таблицы
    пропсы:
       fullData - полные данные, по которым формировалась таблица при загрузке страницы
-      data - данные для фильтрации
 	  filtering - функция обновления данных для фильтрации
 */
 
@@ -37,12 +36,12 @@ const Filter = (props) => {
                 
         //передаем родительскому компоненту новое состояние - отфильтрованный массив
         props.filtering(arr);
-        props.sapn();
 	}
 
     const handleReset = (event) => {
         setTimeout(() => {
             handleSubmit(event);
+            props.onResetSort();
         }, 0);
     }
 
@@ -83,7 +82,6 @@ const Filter = (props) => {
                 <button type="reset">Очистить фильтр</button>
             </p>
         </form>
-        <br />
         </details> 
     )
 }

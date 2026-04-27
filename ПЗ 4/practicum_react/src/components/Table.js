@@ -1,7 +1,8 @@
 import TableHead from './TableHead.js';
 import TableBody from './TableBody.js';
 import Filter from './Filter.js';
-import { useState } from "react";
+import Sort from './Sort.js';
+import { useState, useRef } from "react";
 
 /*
    компонент, выводящий на страницу таблицу с пагинацией
@@ -11,16 +12,18 @@ import { useState } from "react";
 
 const Table = (props) => {
     
-    const [dataTable, setDataTable] = useState(props.data);
-    const updateDataTable = (value) => setDataTable(value);
+    const [filteredData, setFilteredData] = useState(props.data);
+    const [sortedData, setSortedData] = useState(props.data);
     
     //количество страниц разбиения таблицы
-    const n = Math.ceil(dataTable.length / props.amountRows); 
+    const n = Math.ceil(sortedData.length / props.amountRows);
 
-    const [activePage, setActivePage] = useState(n);
+    const [activePage, setActivePage] = useState(1);
     const changeActive = (event) => {
         setActivePage(event.target.innerHTML);
     };
+
+    const sortResetRef = useRef(() => {});
     
     // массив с номерами страниц
     const arr = Array.from({ length: n }, (v, i) => i + 1);
@@ -38,20 +41,32 @@ const Table = (props) => {
         );
     }
 
+    const handleFilter = (value) => {
+        setFilteredData(value);
+        setSortedData(value);
+        setActivePage(1);
+    };
+
+    const handleSort = (value) => {
+        setSortedData(value);
+        setActivePage(1);
+    };
+
     return( 
       <>
-        <Filter filtering={ updateDataTable } data={ dataTable } fullData={ props.data } sapn={ () => setActivePage(n) }/>
+        <Filter filtering={ handleFilter } fullData={ props.data } onResetSort={() => sortResetRef.current()} />
+        <Sort sorting={ handleSort } data={ filteredData } sortLevelsNum={ 3 } setSortReset={(fn) => { sortResetRef.current = fn; }} />
 
         <table>
             <TableHead head={ Object.keys(props.data[0]) } />
-            <TableBody body={ dataTable }
+            <TableBody body={ sortedData }
                 amountRows={ props.amountRows }
                 numPage={ activePage }
                 pagination={ props.pagination }/>
         </table>
 
 	    <div>
-          {pages}
+            {pages}
         </div>
 	  </>   
     )   
