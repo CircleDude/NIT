@@ -44,11 +44,13 @@ const Table = (props) => {
     const handleFilter = (value) => {
         setFilteredData(value);
         setSortedData(value);
+        props.setFilteredData(value);
         setActivePage(1);
     };
 
     const handleSort = (value) => {
         setSortedData(value);
+        props.setFilteredData(value);
         setActivePage(1);
     };
 
