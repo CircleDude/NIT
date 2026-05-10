@@ -12,7 +12,7 @@ const TableRow = (props) => {
         : props.row.map((item, index) => <th key={ index }> {item} </th>);
  
     return(
-        <> {cells} </>
+        <>{cells}</>
     )
 }
 

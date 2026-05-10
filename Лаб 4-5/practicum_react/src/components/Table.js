@@ -12,12 +12,15 @@ import { useState } from "react";
 const Table = (props) => {
     
     const [dataTable, setDataTable] = useState(props.data);
-    const updateDataTable = (value) => setDataTable(value);
+    const updateDataTable = (value) => {
+        setDataTable(value);
+        props.setFilteredData(value);
+    }
     
     //количество страниц разбиения таблицы
     const n = Math.ceil(dataTable.length / props.amountRows); 
 
-    const [activePage, setActivePage] = useState(n);
+    const [activePage, setActivePage] = useState(1);
     const changeActive = (event) => {
         setActivePage(event.target.innerHTML);
     };
@@ -41,7 +44,7 @@ const Table = (props) => {
     return( 
       <>
         <h4>Фильтры</h4>
-        <Filter filtering={ updateDataTable } data={ dataTable } fullData={ props.data } sapn={ () => setActivePage(n) }/>
+        <Filter filtering={ updateDataTable } data={ dataTable } fullData={ props.data } sapn={ () => setActivePage(1) }/>
 
         <table>
             <TableHead head={ Object.keys(props.data[0]) } />
