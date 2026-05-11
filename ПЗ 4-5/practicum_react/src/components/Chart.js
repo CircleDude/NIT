@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ChartDraw from './ChartDraw.js';
 import * as d3 from "d3";
 
@@ -21,7 +21,7 @@ const Chart = (props) => {
     const handleSubmit = (event) => {        
         event.preventDefault();
         setOx(event.target["ox"].value); 
-		setOy([event.target["oy"][0].checked, event.target["oy"][1].checked]);		
+        setOy([event.target["oy"][0].checked, event.target["oy"][1].checked]);		
         setType(event.target["graphType"].value);
 	}
 
@@ -45,12 +45,12 @@ const Chart = (props) => {
         <p className={(oy[0] | oy[1]) ? "" : "errorText"}> Значение по оси OY </p>
 		<div>
           <label>
-            <input type="checkbox" name="oy" />
+            <input type="checkbox" name="oy" onChange={ (event) => { setOy([event.target.checked, oy[1]]) } } />
             Максимальная скорость
           </label>
           <br/>
           <label>
-            <input  type="checkbox" name="oy" />
+            <input  type="checkbox" name="oy" onChange={ (event) => { setOy([oy[0], event.target.checked]) } } />
             Минимальная скорость
           </label>
 		</div>
