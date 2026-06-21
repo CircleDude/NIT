@@ -22,7 +22,6 @@ function Matching({index, tasks, retry}: ComponentProps) {
   }
   const dispatch = useDispatch();
 
-  // Добавляем список ответов очередного задания в хранилище
   useEffect(() => {
     const newAnswers = randAnswers();
 
