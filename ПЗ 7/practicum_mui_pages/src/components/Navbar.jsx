@@ -22,6 +22,7 @@ const navItems = [
   { id: '1', label: 'Главная', link: '/' },
   { id: '2', label: 'Список машин', link: '/list' },
   { id: '3', label: 'Диаграммы', link: '/chart' },
+  { id: '4', label: 'Проверь себы', link: '/testing' },
 ];
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -107,7 +108,7 @@ function Navbar({ active }: NavbarProps) {
                                     </IconButton>
                                 </Box>
                                 {navItems.map((item) => (
-                                    <Link to = {item.link}>
+                                    <Link to = {item.link} style={{ textDecoration: 'none', color: 'inherit' }}>
                                         <StyledMenuItem
                                             key={item.id}
                                             selected={active === item.id}
